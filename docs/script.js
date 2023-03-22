@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     videoPlayer.autoplay = true;
     videoPlayer.controls = true;
     videoPlayer.setAttribute("playsinline", "");
+    videoPlayer.volume = 0.5;
+
     document.body.appendChild(videoPlayer);
 
     let currentVideoIndex = 1;
 
-    const totalVideos = 33; // number of videos/episodes
+    const totalVideos = 17; // number of videos/episodes
 
     videoPlayer.addEventListener("ended", () => {
         if (currentVideoIndex < totalVideos) {
@@ -30,6 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     videoPlayer.src = firstVideoFile;
 
     videoPlayer.onloadedmetadata = () => {
-        headerText.textContent = "Watch AGP Episodes off of YouTube | Episode: " + currentVideoIndex + " | " + videoPlayer.title;
+        headerText.textContent = "Watch AGP Episodes off of YouTube  |  Episode: " + currentVideoIndex + "/" + totalVideos
     };
 });
